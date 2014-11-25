@@ -19,8 +19,6 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Handler;
 
-
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -29,6 +27,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TabHost;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 
@@ -173,8 +172,6 @@ import android.widget.TextView;
 		case R.id.btn_fecha:
 			this.text = (TextView)getActivity().findViewById(R.id.fecha);
 			new Handler().post(new Runnable() {
-				
-				@Override
 				public void run() {
 					setDate();	
 				}
@@ -186,229 +183,322 @@ import android.widget.TextView;
 				public void run() {
 					setDate();	
 				}
-			});
-			
+			});	
 		break;
 		case R.id.nodo1_temp:
-		
-		Log.d("fecha","esta es la fecha "+ fecha1 + " " + fecha1_2);
-		args = new Bundle();
-		aux = new cargar_datos(this.lugar_nodo[0], this.lugar_nodo[1],fecha1, fecha1_2,medidas[0],funciones[0]);
-		Array_datos = aux.get_datos();
-		fragment = new FragmentOne(Array_datos, "Temperatura", "Grados Celsius",""+this.lugar_nodo[4]+": Nodo 1");
-		fragment.setArguments(args);
-		frgManager = getFragmentManager();
-		frgManager.beginTransaction().replace(R.id.content_frame, fragment)
-		.commit();
-					//Toast.makeText(getActivity(), "Introdusca la fecha", Toast.LENGTH_SHORT).show();
-//					LayoutInflater inflater = getActivity().getLayoutInflater();
-//					View layout = inflater.inflate(R.layout.alerta,(ViewGroup)getActivity().findViewById(R.id.desconectado) );
-//					
-//					Toast mensaje = new Toast(getActivity());
-//					mensaje.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
-//					mensaje.setDuration(Toast.LENGTH_LONG);
-//					mensaje.setView(layout);
-//					mensaje.show();
+			args = new Bundle();
+			aux = new cargar_datos(this.lugar_nodo[0], this.lugar_nodo[1],fecha1, fecha1_2,medidas[0],funciones[0]);
+			Array_datos = aux.get_datos();
+			if(Array_datos.isEmpty()){
+			Toast.makeText(getActivity(), "Datos no subidos", Toast.LENGTH_SHORT).show();
+			}
+			else{
+			fragment = new FragmentOne(Array_datos, "Temperatura", "Grados Celsius",""+this.lugar_nodo[4]+": Nodo 1");
+			fragment.setArguments(args);
+			frgManager = getFragmentManager();
+			frgManager.beginTransaction().replace(R.id.content_frame, fragment)
+			.commit();
+			}
 			break;
 		case R.id.nodo2_temp:
 			args = new Bundle();
 			aux = new cargar_datos(this.lugar_nodo[0], this.lugar_nodo[2],fecha1, fecha1_2,medidas[0],funciones[0]);
 			Array_datos = aux.get_datos();
+			if(Array_datos.isEmpty()){
+				Toast.makeText(getActivity(), "Datos no subidos", Toast.LENGTH_SHORT).show();
+			}
+			else{
 			fragment = new FragmentOne(Array_datos, "Temperatura", "Grados Celsius",""+this.lugar_nodo[4]+": Nodo 2");
 			fragment.setArguments(args);
 			frgManager = getFragmentManager();
 			frgManager.beginTransaction().replace(R.id.content_frame, fragment)
 			.commit();
+			}
 			break;
 		case R.id.nodo3_temp:
 			args = new Bundle();
 			aux = new cargar_datos(this.lugar_nodo[0], this.lugar_nodo[3],fecha1,fecha1_2,medidas[0],funciones[0]);
 			Array_datos = aux.get_datos();
+			if(Array_datos.isEmpty()){
+				Toast.makeText(getActivity(), "Datos no subidos", Toast.LENGTH_SHORT).show();
+			}
+			else{
 			fragment = new FragmentOne(Array_datos, "Temperatura", "Grados Celsius",""+this.lugar_nodo[4]+": Nodo 3");
 			fragment.setArguments(args);
 			frgManager = getFragmentManager();
 			frgManager.beginTransaction().replace(R.id.content_frame, fragment)
 			.commit();
+			}
 			break;
 		case R.id.nodo1_hum:
 			args = new Bundle();
 			aux = new cargar_datos(this.lugar_nodo[0], this.lugar_nodo[1],fecha1,fecha1_2,medidas[1],funciones[0]);
 			Array_datos = aux.get_datos();
+			if(Array_datos.isEmpty()){
+				Toast.makeText(getActivity(), "Datos no subidos", Toast.LENGTH_SHORT).show();
+			}
+			else{
 			fragment = new FragmentOne(Array_datos, "Humedad[%]", "Porcentaje Humedad",""+this.lugar_nodo[4]+": Nodo 1");
 			fragment.setArguments(args);
 			frgManager = getFragmentManager();
 			frgManager.beginTransaction().replace(R.id.content_frame, fragment)
 			.commit();
+			}
 			break;
 		case R.id.nodo2_hum:
 			args = new Bundle();
 			aux = new cargar_datos(this.lugar_nodo[0], this.lugar_nodo[2],fecha1, fecha1_2,medidas[1],funciones[0]);
 			Array_datos = aux.get_datos();
+			if(Array_datos.isEmpty()){
+				Toast.makeText(getActivity(), "Datos no subidos", Toast.LENGTH_SHORT).show();
+			}
+			else{
 			fragment = new FragmentOne(Array_datos, "Humedad[%]", "Porcentaje Humedad",""+this.lugar_nodo[4]+": Nodo 2");
 			fragment.setArguments(args);
 			frgManager = getFragmentManager();
 			frgManager.beginTransaction().replace(R.id.content_frame, fragment)
 			.commit();
+			}
 			break;
 		case R.id.nodo3_hum:
 			args = new Bundle();
 			aux = new cargar_datos(this.lugar_nodo[0], this.lugar_nodo[3],fecha1, fecha1_2,medidas[1],funciones[0]);
 			Array_datos = aux.get_datos();
+			if(Array_datos.isEmpty()){
+				Toast.makeText(getActivity(), "Datos no subidos", Toast.LENGTH_SHORT).show();
+			}
+			else{
 			fragment = new FragmentOne(Array_datos, "Humedad[%]", "Porcentaje Humedad",""+this.lugar_nodo[4]+": Nodo 3");
 			fragment.setArguments(args);
 			frgManager = getFragmentManager();
 			frgManager.beginTransaction().replace(R.id.content_frame, fragment)
 			.commit();
+			}
 			break;
 		case R.id.nodo1_presion:
 			args = new Bundle();
 			aux = new cargar_datos(this.lugar_nodo[0], this.lugar_nodo[1],fecha1,fecha1_2,medidas[2],funciones[0]);
 			Array_datos = aux.get_datos();
+			if(Array_datos.isEmpty()){
+				Toast.makeText(getActivity(), "Datos no subidos", Toast.LENGTH_SHORT).show();
+			}
+			else{
 			fragment = new FragmentOne(Array_datos, "Presión[Kpa]", "Presión[Kpa]",""+this.lugar_nodo[4]+": Nodo 1");
 			fragment.setArguments(args);
 			frgManager = getFragmentManager();
 			frgManager.beginTransaction().replace(R.id.content_frame, fragment)
 			.commit();
+			}
 			break;
 		case R.id.nodo2_presion:
 			args = new Bundle();
 			aux = new cargar_datos(this.lugar_nodo[0], this.lugar_nodo[2],fecha1,fecha1_2,medidas[2],funciones[0]);
 			Array_datos = aux.get_datos();
+			if(Array_datos.isEmpty()){
+				Toast.makeText(getActivity(), "Datos no subidos", Toast.LENGTH_SHORT).show();
+			}
+			else{
 			fragment = new FragmentOne(Array_datos, "Presión[Kpa]", "Presión[Kpa]",""+this.lugar_nodo[4]+": Nodo 2");
 			fragment.setArguments(args);
 			frgManager = getFragmentManager();
 			frgManager.beginTransaction().replace(R.id.content_frame, fragment)
 			.commit();
+			}
 			break;
 		case R.id.nodo3_presion:
 			args = new Bundle();
 			aux = new cargar_datos(this.lugar_nodo[0], this.lugar_nodo[3],fecha1,fecha1_2,medidas[2],funciones[0]);
 			Array_datos = aux.get_datos();
+			if(Array_datos.isEmpty()){
+				Toast.makeText(getActivity(), "Datos no subidos", Toast.LENGTH_SHORT).show();
+			}
+			else{
 			fragment = new FragmentOne(Array_datos, "Presión[Kpa]", "Presión[Kpa]",""+this.lugar_nodo[4]+": Nodo 3");
 			fragment.setArguments(args);
 			frgManager = getFragmentManager();
 			frgManager.beginTransaction().replace(R.id.content_frame, fragment)
 			.commit();
+			}
 			break;
 		case R.id.nodo1_rad:
 			args = new Bundle();
 			aux = new cargar_datos(this.lugar_nodo[0], this.lugar_nodo[1],fecha2, fecha1_2,medidas[3],funciones[1]);
 			Array_datos = aux.get_datos();
+			if(Array_datos.isEmpty()){
+				Toast.makeText(getActivity(), "Datos no subidos", Toast.LENGTH_SHORT).show();
+			}
+			else{
 			fragment = new FragmentOne(Array_datos, "Radiación Solar[Watts/(m^2)]", "[Watts/(m^2)]",""+this.lugar_nodo[4]+": Nodo 1");
 			fragment.setArguments(args);
 			frgManager = getFragmentManager();
 			frgManager.beginTransaction().replace(R.id.content_frame, fragment)
 			.commit();
+			}
 			break;
 		case R.id.nodo2_rad:
 			args = new Bundle();
 			aux = new cargar_datos(this.lugar_nodo[0], this.lugar_nodo[2],fecha2,fecha1_2,medidas[3],funciones[1]);
 			Array_datos = aux.get_datos();
+			if(Array_datos.isEmpty()){
+				Toast.makeText(getActivity(), "Datos no subidos", Toast.LENGTH_SHORT).show();
+			}
+			else{
 			fragment = new FragmentOne(Array_datos, "Radiación Solar[Watts/(m^2)]", "[Watts/(m^2)]",""+this.lugar_nodo[4]+": Nodo 2");
 			fragment.setArguments(args);
 			frgManager = getFragmentManager();
 			frgManager.beginTransaction().replace(R.id.content_frame, fragment)
 			.commit();
+			}
 			break;
 		case R.id.nodo3_rad:
 			args = new Bundle();
 			aux = new cargar_datos(this.lugar_nodo[0], this.lugar_nodo[3],fecha2,fecha1_2,medidas[3],funciones[1]);
 			Array_datos = aux.get_datos();
+			if(Array_datos.isEmpty()){
+				Toast.makeText(getActivity(), "Datos no subidos", Toast.LENGTH_SHORT).show();
+			}
+			else{
 			fragment = new FragmentOne(Array_datos, "Radiación Solar[Watts/(m^2)]", "[Watts/(m^2)]",""+this.lugar_nodo[4]+": Nodo 3");
 			fragment.setArguments(args);
 			frgManager = getFragmentManager();
 			frgManager.beginTransaction().replace(R.id.content_frame, fragment)
 			.commit();
+			}
 			break;
 		case R.id.nodo1_hum_plant:
 			args = new Bundle();
 			aux = new cargar_datos(this.lugar_nodo[0], this.lugar_nodo[1],fecha2,fecha1_2,medidas[4],funciones[1]);
 			Array_datos = aux.get_datos();
+			if(Array_datos.isEmpty()){
+				Toast.makeText(getActivity(), "Datos no subidos", Toast.LENGTH_SHORT).show();
+			}
+			else{
 			fragment = new FragmentOne(Array_datos, "Humedad Hoja[V]", "Humedad Hoja[V]",""+this.lugar_nodo[4]+": Nodo 1");
 			fragment.setArguments(args);
 			frgManager = getFragmentManager();
 			frgManager.beginTransaction().replace(R.id.content_frame, fragment)
 			.commit();
+			}
 			break;
 		case R.id.nodo2_hum_plant:
 			args = new Bundle();
 			aux = new cargar_datos(this.lugar_nodo[0], this.lugar_nodo[2],fecha2,fecha1_2,medidas[4],funciones[1]);
 			Array_datos = aux.get_datos();
+			if(Array_datos.isEmpty()){
+				Toast.makeText(getActivity(), "Datos no subidos", Toast.LENGTH_SHORT).show();
+			}
+			else{
 			fragment = new FragmentOne(Array_datos, "Humedad Hoja[V]", "Humedad Hoja[V]",""+this.lugar_nodo[4]+": Nodo 2");
 			fragment.setArguments(args);
 			frgManager = getFragmentManager();
 			frgManager.beginTransaction().replace(R.id.content_frame, fragment)
 			.commit();
+			}
 			break;
 		case R.id.nodo3_hum_plant:
 			args = new Bundle();
 			aux = new cargar_datos(this.lugar_nodo[0], this.lugar_nodo[3],fecha2,fecha1_2,medidas[4],funciones[1]);
 			Array_datos = aux.get_datos();
+			if(Array_datos.isEmpty()){
+				Toast.makeText(getActivity(), "Datos no subidos", Toast.LENGTH_SHORT).show();
+			}
+			else{
 			fragment = new FragmentOne(Array_datos, "Humedad Hoja[V]", "Humedad Hoja[V]",""+this.lugar_nodo[4]+": Nodo 3");
 			fragment.setArguments(args);
 			frgManager = getFragmentManager();
 			frgManager.beginTransaction().replace(R.id.content_frame, fragment)
 			.commit();
+			}
 			break;
 		case R.id.nodo1_bateria:
 			args = new Bundle();
 			aux = new cargar_datos(this.lugar_nodo[0], this.lugar_nodo[1],fecha2,fecha1_2,medidas[5],funciones[1]);
 			Array_datos = aux.get_datos();
+			if(Array_datos.isEmpty()){
+				Toast.makeText(getActivity(), "Datos no subidos", Toast.LENGTH_SHORT).show();
+			}
+			else{
 			fragment = new FragmentOne(Array_datos, "Porcentaje Batería", "Batería %",""+this.lugar_nodo[4]+": Nodo 1");
 			fragment.setArguments(args);
 			frgManager = getFragmentManager();
 			frgManager.beginTransaction().replace(R.id.content_frame, fragment)
 			.commit();
+			}
 			break;
 		case R.id.nodo2_bateria:
 			args = new Bundle();
 			aux = new cargar_datos(this.lugar_nodo[0], this.lugar_nodo[2],fecha2,fecha1_2,medidas[5],funciones[1]);
 			Array_datos = aux.get_datos();
+			if(Array_datos.isEmpty()){
+				Toast.makeText(getActivity(), "Datos no subidos", Toast.LENGTH_SHORT).show();
+			}
+			else{
 			fragment = new FragmentOne(Array_datos, "Porcentaje Batería", "Batería %",""+this.lugar_nodo[4]+": Nodo 2");
 			fragment.setArguments(args);
 			frgManager = getFragmentManager();
 			frgManager.beginTransaction().replace(R.id.content_frame, fragment)
 			.commit();
+			}
 			break;
 		case R.id.nodo3_bateria:
 			args = new Bundle();
 			aux = new cargar_datos(this.lugar_nodo[0], this.lugar_nodo[3],fecha2,fecha1_2,medidas[5],funciones[1]);
 			Array_datos = aux.get_datos();
+			if(Array_datos.isEmpty()){
+				Toast.makeText(getActivity(), "Datos no subidos", Toast.LENGTH_SHORT).show();
+			}
+			else{
 			fragment = new FragmentOne(Array_datos, "Porcentaje Batería", "Batería %",""+this.lugar_nodo[4]+": Nodo 3");
 			fragment.setArguments(args);
 			frgManager = getFragmentManager();
 			frgManager.beginTransaction().replace(R.id.content_frame, fragment)
 			.commit();
+			}
 			break;
 		case R.id.nodo1_tempsuelo:
 			args = new Bundle();
 			aux = new cargar_datos(this.lugar_nodo[0], this.lugar_nodo[1],fecha3,fecha1_2,medidas[6],funciones[2]);
 			Array_datos = aux.get_datos();
+			if(Array_datos.isEmpty()){
+				Toast.makeText(getActivity(), "Datos no subidos", Toast.LENGTH_SHORT).show();
+			}
+			else{
 			fragment = new FragmentOne(Array_datos, "Temperatura Suelo[C°]", "[C°]",""+this.lugar_nodo[4]+": Nodo 1");
 			fragment.setArguments(args);
 			frgManager = getFragmentManager();
 			frgManager.beginTransaction().replace(R.id.content_frame, fragment)
 			.commit();
+			}
 			break;
 		case R.id.nodo2_tempsuelo:
 			args = new Bundle();
 			aux = new cargar_datos(this.lugar_nodo[0], this.lugar_nodo[2],fecha3,fecha1_2,medidas[6],funciones[2]);
 			Array_datos = aux.get_datos();
+			if(Array_datos.isEmpty()){
+				Toast.makeText(getActivity(), "Datos no subidos", Toast.LENGTH_SHORT).show();
+			}
+			else{
 			fragment = new FragmentOne(Array_datos, "Temperatura Suelo[C°]", "[C°]",""+this.lugar_nodo[4]+": Nodo 2");
 			fragment.setArguments(args);
 			frgManager = getFragmentManager();
 			frgManager.beginTransaction().replace(R.id.content_frame, fragment)
 			.commit();
+			}
 			break;
 		case R.id.nodo3_tempsuelo:
 			args = new Bundle();
 			aux = new cargar_datos(this.lugar_nodo[0], this.lugar_nodo[3],fecha3,fecha1_2,medidas[6],funciones[2]);
 			Array_datos = aux.get_datos();
+			if(Array_datos.isEmpty()){
+				Toast.makeText(getActivity(), "Datos no subidos", Toast.LENGTH_SHORT).show();
+			}
+			else{
 			fragment = new FragmentOne(Array_datos, "Temperatura Suelo[C°]", "[C°]",""+this.lugar_nodo[4]+": Nodo 3");
 			fragment.setArguments(args);
 			frgManager = getFragmentManager();
 			frgManager.beginTransaction().replace(R.id.content_frame, fragment)
 			.commit();
+			}
 			break;
 		}
 	}
