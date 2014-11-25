@@ -1,10 +1,16 @@
-package com.tutecentral.navigationdrawer;
+package com.agrosense.menu;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import com.agrosense.graficos.FragmentThree;
 import com.agrosense.graficos.clima;
+import com.tutecentral.navigationdrawer.R;
+import com.tutecentral.navigationdrawer.R.drawable;
+import com.tutecentral.navigationdrawer.R.id;
+import com.tutecentral.navigationdrawer.R.layout;
+import com.tutecentral.navigationdrawer.R.menu;
+import com.tutecentral.navigationdrawer.R.string;
 
 
 import android.os.Bundle;

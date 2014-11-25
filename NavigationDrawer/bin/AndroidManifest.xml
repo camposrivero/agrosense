@@ -17,7 +17,7 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name">
         <activity
-            android:name="com.tutecentral.navigationdrawer.MainActivity"
+            android:name="com.agrosense.menu.MainActivity"
             android:label="@string/app_name"
             android:configChanges="orientation|screenSize" >
             <intent-filter>

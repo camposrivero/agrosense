@@ -1,6 +1,9 @@
-package com.tutecentral.navigationdrawer;
+package com.agrosense.menu;
 
 import java.util.List;
+
+import com.tutecentral.navigationdrawer.R;
+import com.tutecentral.navigationdrawer.R.id;
 
 import android.app.Activity;
 import android.content.Context;
