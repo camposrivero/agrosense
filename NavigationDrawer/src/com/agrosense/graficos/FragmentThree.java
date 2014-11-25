@@ -178,9 +178,7 @@ import android.widget.TextView;
 				
 				@Override
 				public void run() {
-					setDate();
-					
-					
+					setDate();	
 				}
 			});
 		break;
