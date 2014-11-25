@@ -7,8 +7,6 @@ import com.agrosense.graficos.FragmentThree;
 import com.agrosense.graficos.clima;
 import com.tutecentral.navigationdrawer.R;
 
-
-
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.Fragment;
