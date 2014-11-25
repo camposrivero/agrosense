@@ -164,6 +164,12 @@ import android.widget.TextView;
 		cargar_datos aux = null;
 		FragmentManager frgManager = null;
 		
+		this.text = (TextView)getActivity().findViewById(R.id.fecha);
+		this.text2 = (TextView)getActivity().findViewById(R.id.fecha2);
+		
+		this.fecha1 = text.getText().toString();
+		this.fecha1_2 = text2.getText().toString();
+		
 		switch(v.getId()){
 		
 		case R.id.btn_fecha:
@@ -181,22 +187,13 @@ import android.widget.TextView;
 		case R.id.btn_fecha2:
 			this.text = (TextView)getActivity().findViewById(R.id.fecha2);
 			new Handler().post(new Runnable() {
-				
-				@Override
 				public void run() {
 					setDate();	
 				}
 			});
 			
 		break;
-
 		case R.id.nodo1_temp:
-		
-		this.text = (TextView)getActivity().findViewById(R.id.fecha);
-		this.text2 = (TextView)getActivity().findViewById(R.id.fecha2);
-		
-		this.fecha1 = text.getText().toString();
-		this.fecha1_2 = text2.getText().toString();
 		
 		Log.d("fecha","esta es la fecha "+ fecha1 + " " + fecha1_2);
 		args = new Bundle();
