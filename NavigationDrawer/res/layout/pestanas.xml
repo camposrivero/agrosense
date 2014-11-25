@@ -1,0 +1,553 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TabHost
+        android:id="@android:id/tabhost"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+       <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+			<HorizontalScrollView
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:fillViewport="true"
+			    android:scrollbars="none" >
+            	<TabWidget
+                	android:id="@android:id/tabs"
+                	android:layout_width="wrap_content"
+                	android:layout_height="wrap_content" />
+			</HorizontalScrollView>
+            <ScrollView 
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+           <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+                
+                <LinearLayout
+                    android:id="@+id/tab1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+					
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="155dp"
+                        android:background="@drawable/card_shape_normal"
+                        android:padding="8dp" >
+                        
+                     <TextView
+                         android:id="@+id/fecha"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_alignBottom="@+id/btn_fecha"
+                         android:layout_alignParentLeft="true"
+                         android:layout_alignParentTop="true"
+                         android:layout_toLeftOf="@+id/btn_fecha"
+                         android:background="@drawable/card_shape_normal"
+                         android:text=""
+                         android:gravity="center"
+                         android:textSize="20sp"
+                         android:textColor="@color/blanco" />
+    				
+    				<TextView
+    				    android:id="@+id/fecha2"
+    				    android:layout_width="wrap_content"
+    				    android:layout_height="wrap_content"
+    				    android:layout_alignParentLeft="true"
+    				    android:layout_below="@+id/btn_fecha"
+    				    android:layout_toLeftOf="@+id/btn_fecha2"
+    				    android:background="@drawable/card_shape_normal"
+    				    android:text=""
+    				    android:gravity="center"
+                        android:textSize="20sp"
+                        android:textColor="@color/blanco" />
+
+    				 <Button
+    				     android:id="@+id/btn_fecha"
+    				     style="?android:attr/buttonStyleSmall"
+    				     android:layout_width="wrap_content"
+    				     android:layout_height="wrap_content"
+    				     android:layout_above="@+id/btn_fecha2"
+    				     android:layout_alignParentRight="true"
+    				     android:layout_marginBottom="16dp"
+    				     android:text="Desde" />
+
+    				 <Button
+    				     android:id="@+id/btn_fecha2"
+    				     style="?android:attr/buttonStyleSmall"
+    				     android:layout_width="wrap_content"
+    				     android:layout_height="wrap_content"
+    				     android:layout_alignParentBottom="true"
+    				     android:layout_alignParentRight="true"
+    				     android:layout_marginBottom="14dp"
+    				     android:text="Hasta" />
+                        
+                    </RelativeLayout>
+                    
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="210dp"
+                        android:background="@drawable/card_shape_normal"
+                        android:padding="8dp" >
+                    
+						<ImageView
+						    android:id="@+id/imagen_temperatura"
+						    android:layout_width="match_parent"
+						    android:layout_height="match_parent"
+						    android:layout_toLeftOf="@+id/nodo1_temp"
+						    android:background="@drawable/card_shape_normal2"
+						    android:src="@drawable/temperatura" />
+
+						<Button
+						    android:id="@+id/nodo1_temp"
+						    android:layout_width="wrap_content"
+						    android:layout_height="wrap_content"
+						    android:layout_alignParentRight="true"
+						    android:layout_alignTop="@+id/imagen_temperatura"
+						    android:drawableLeft="@drawable/ic_boton"
+						    android:drawablePadding="15dp"
+						    android:gravity="left|center_vertical"
+						    android:text="@string/nodo1" />
+
+						<Button
+						    android:id="@+id/nodo2_temp"
+						    android:layout_width="wrap_content"
+						    android:layout_height="wrap_content"
+						    android:layout_alignParentRight="true"
+						    android:drawableLeft="@drawable/ic_boton"
+						    android:drawablePadding="15dp"
+						    android:gravity="left|center_vertical"
+						    android:layout_alignRight="@+id/nodo1_temp"
+						    android:layout_below="@+id/nodo1_temp"
+						    android:text="@string/nodo2" />
+
+						<Button
+						    android:id="@+id/nodo3_temp"
+						    android:layout_width="wrap_content"
+						    android:layout_height="wrap_content"
+						    android:layout_alignParentRight="true"
+						    android:drawableLeft="@drawable/ic_boton"
+						    android:drawablePadding="15dp"
+						    android:gravity="left|center_vertical"
+						    android:layout_alignLeft="@+id/nodo2_temp"
+						    android:layout_below="@+id/nodo2_temp"
+						    android:text="@string/nodo3" />
+
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="210dp"
+                        android:background="@drawable/card_shape_normal"
+                        android:padding="8dp" >
+                        
+
+						<ImageView
+						    android:id="@+id/imagen_humedad"
+						    android:layout_width="match_parent"
+						    android:layout_height="match_parent"
+							android:layout_toLeftOf="@+id/nodo1_hum"
+						    android:src="@drawable/humedad"
+						    android:background="@drawable/card_shape_normal2"
+						     />
+
+						<Button
+						    android:id="@+id/nodo1_hum"
+						    android:layout_width="wrap_content"
+						    android:layout_height="wrap_content"
+						    android:layout_alignParentRight="true"
+						    android:layout_alignTop="@+id/imagen_humedad"
+						    android:drawableLeft="@drawable/ic_boton"
+						    android:drawablePadding="15dp"
+						    android:gravity="left|center_vertical"
+						    android:text="@string/nodo1" />
+
+						<Button
+						    android:id="@+id/nodo2_hum"
+						    android:layout_width="wrap_content"
+						    android:layout_height="wrap_content"
+						    android:layout_alignParentRight="true"
+						    android:drawableLeft="@drawable/ic_boton"
+						    android:drawablePadding="15dp"
+						    android:gravity="left|center_vertical"
+						    android:layout_alignRight="@+id/nodo1_hum"
+						    android:layout_below="@+id/nodo1_hum"
+						    android:text="@string/nodo2" />
+
+						<Button
+						    android:id="@+id/nodo3_hum"
+						    android:layout_width="wrap_content"
+						    android:layout_height="wrap_content"
+						    android:layout_alignParentRight="true"
+						    android:drawableLeft="@drawable/ic_boton"
+						    android:drawablePadding="15dp"
+						    android:gravity="left|center_vertical"
+						    android:layout_alignLeft="@+id/nodo2_hum"
+						    android:layout_below="@+id/nodo2_hum"
+						    android:text="@string/nodo3" />
+
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="210dp"
+                        android:background="@drawable/card_shape_normal"
+                        android:padding="8dp" >
+
+						<ImageView
+						    android:id="@+id/imagen_presion"
+						    android:layout_width="match_parent"
+						    android:layout_height="match_parent"
+							android:layout_toLeftOf="@+id/nodo1_presion"
+						    android:src="@drawable/presion"
+						    android:background="@drawable/card_shape_normal2"
+						     />
+
+						<Button
+						    android:id="@+id/nodo1_presion"
+						    android:layout_width="wrap_content"
+						    android:layout_height="wrap_content"
+						    android:layout_alignParentRight="true"
+						    android:layout_alignTop="@+id/imagen_presion"
+						    android:drawableLeft="@drawable/ic_boton"
+						    android:drawablePadding="15dp"
+						    android:gravity="left|center_vertical"
+						    android:text="@string/nodo1" />
+
+						<Button
+						    android:id="@+id/nodo2_presion"
+						    android:layout_width="wrap_content"
+						    android:layout_height="wrap_content"
+						    android:layout_alignParentRight="true"
+						    android:drawableLeft="@drawable/ic_boton"
+						    android:drawablePadding="15dp"
+						    android:gravity="left|center_vertical"
+						    android:layout_alignRight="@+id/nodo1_presion"
+						    android:layout_below="@+id/nodo1_presion"
+						    android:text="@string/nodo2" />
+
+						<Button
+						    android:id="@+id/nodo3_presion"
+						    android:layout_width="wrap_content"
+						    android:layout_height="wrap_content"
+						    android:layout_alignParentRight="true"
+						    android:drawableLeft="@drawable/ic_boton"
+						    android:drawablePadding="15dp"
+						    android:gravity="left|center_vertical"
+						    android:layout_alignLeft="@+id/nodo2_presion"
+						    android:layout_below="@+id/nodo2_presion"
+						    android:text="@string/nodo3" />
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tab2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center" >
+                    
+                     <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="210dp"
+                        android:background="@drawable/card_shape_normal"
+                        android:padding="8dp" >
+                        
+
+                        <EditText
+                            android:id="@+id/editText2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:hint="@string/fecha"
+                            android:inputType="date">
+
+                            <requestFocus />
+                        </EditText>
+
+						<ImageView
+						    android:id="@+id/imagen_radiacion"
+						    android:layout_width="match_parent"
+						    android:layout_height="match_parent"
+							android:layout_toLeftOf="@+id/nodo1_rad"
+							android:layout_below="@+id/editText2"
+						    android:src="@drawable/radiacion"
+						    android:background="@drawable/card_shape_normal2"
+						     />
+
+						<Button
+						    android:id="@+id/nodo1_rad"
+						    android:layout_width="wrap_content"
+						    android:layout_height="wrap_content"
+						    android:layout_alignParentRight="true"
+						    android:layout_alignTop="@+id/imagen_radiacion"
+						    android:drawableLeft="@drawable/ic_boton"
+						    android:drawablePadding="15dp"
+						    android:gravity="left|center_vertical"
+						    android:text="@string/nodo1" />
+
+						<Button
+						    android:id="@+id/nodo2_rad"
+						    android:layout_width="wrap_content"
+						    android:layout_height="wrap_content"
+						    android:layout_alignParentRight="true"
+						    android:drawableLeft="@drawable/ic_boton"
+						    android:drawablePadding="15dp"
+						    android:gravity="left|center_vertical"
+						    android:layout_alignRight="@+id/nodo1_rad"
+						    android:layout_below="@+id/nodo1_rad"
+						    android:text="@string/nodo2" />
+
+						<Button
+						    android:id="@+id/nodo3_rad"
+						    android:layout_width="wrap_content"
+						    android:layout_height="wrap_content"
+						    android:layout_alignParentRight="true"
+						    android:drawableLeft="@drawable/ic_boton"
+						    android:drawablePadding="15dp"
+						    android:gravity="left|center_vertical"
+						    android:layout_alignLeft="@+id/nodo2_rad"
+						    android:layout_below="@+id/nodo2_rad"
+						    android:text="@string/nodo3" />
+
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="210dp"
+                        android:background="@drawable/card_shape_normal"
+                        android:padding="8dp" >
+
+						<ImageView
+						    android:id="@+id/imagen_humedad_planta"
+						    android:layout_width="match_parent"
+						    android:layout_height="match_parent"
+							android:layout_toLeftOf="@+id/nodo1_hum_plant"
+						    android:src="@drawable/humedad_planta"
+						    android:background="@drawable/card_shape_normal2"
+						     />
+
+						<Button
+						    android:id="@+id/nodo1_hum_plant"
+						    android:layout_width="wrap_content"
+						    android:layout_height="wrap_content"
+						    android:layout_alignParentRight="true"
+						    android:layout_alignTop="@+id/imagen_humedad_planta"
+						    android:drawableLeft="@drawable/ic_boton"
+						    android:drawablePadding="15dp"
+						    android:gravity="left|center_vertical"
+						    android:text="@string/nodo1" />
+
+						<Button
+						    android:id="@+id/nodo2_hum_plant"
+						    android:layout_width="wrap_content"
+						    android:layout_height="wrap_content"
+						    android:layout_alignParentRight="true"
+						    android:drawableLeft="@drawable/ic_boton"
+						    android:drawablePadding="15dp"
+						    android:gravity="left|center_vertical"
+						    android:layout_alignRight="@+id/nodo1_hum_plant"
+						    android:layout_below="@+id/nodo1_hum_plant"
+						    android:text="@string/nodo2" />
+
+						<Button
+						    android:id="@+id/nodo3_hum_plant"
+						    android:layout_width="wrap_content"
+						    android:layout_height="wrap_content"
+						    android:layout_alignParentRight="true"
+						    android:drawableLeft="@drawable/ic_boton"
+						    android:drawablePadding="15dp"
+						    android:gravity="left|center_vertical"
+						    android:layout_alignLeft="@+id/nodo2_hum_plant"
+						    android:layout_below="@+id/nodo2_hum_plant"
+						    android:text="@string/nodo3" />
+
+                    </RelativeLayout>
+ 					<RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="210dp"
+                        android:background="@drawable/card_shape_normal"
+                        android:padding="8dp" >
+ 
+
+						<ImageView
+						    android:id="@+id/imagen_bateria"
+						    android:layout_width="match_parent"
+						    android:layout_height="match_parent"
+							android:layout_toLeftOf="@+id/nodo1_bateria"
+						    android:src="@drawable/bateria"
+						    android:background="@drawable/card_shape_normal2"
+						     />
+
+						<Button
+						    android:id="@+id/nodo1_bateria"
+						    android:layout_width="wrap_content"
+						    android:layout_height="wrap_content"
+						    android:layout_alignParentRight="true"
+						    android:layout_alignTop="@+id/imagen_bateria"
+						    android:drawableLeft="@drawable/ic_boton"
+						    android:drawablePadding="15dp"
+						    android:gravity="left|center_vertical"
+						    android:text="@string/nodo1" />
+
+						<Button
+						    android:id="@+id/nodo2_bateria"
+						    android:layout_width="wrap_content"
+						    android:layout_height="wrap_content"
+						    android:layout_alignParentRight="true"
+						    android:drawableLeft="@drawable/ic_boton"
+						    android:drawablePadding="15dp"
+						    android:gravity="left|center_vertical"
+						    android:layout_alignRight="@+id/nodo1_bateria"
+						    android:layout_below="@+id/nodo1_bateria"
+						    android:text="@string/nodo2" />
+
+						<Button
+						    android:id="@+id/nodo3_bateria"
+						    android:layout_width="wrap_content"
+						    android:layout_height="wrap_content"
+						    android:layout_alignParentRight="true"
+						    android:drawableLeft="@drawable/ic_boton"
+						    android:drawablePadding="15dp"
+						    android:gravity="left|center_vertical"
+						    android:layout_alignLeft="@+id/nodo2_bateria"
+						    android:layout_below="@+id/nodo2_bateria"
+						    android:text="@string/nodo3" />
+
+                    </RelativeLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/tab3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center" >
+ 				 	
+ 				 	<RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="210dp"
+                        android:background="@drawable/card_shape_normal"
+                        android:padding="8dp" >
+                        
+
+                        <EditText
+                            android:id="@+id/editText3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:hint="@string/fecha"
+                            android:inputType="date">
+
+                            <requestFocus />
+                        </EditText>
+
+						<ImageView
+						    android:id="@+id/imagen_tempsuelo"
+						    android:layout_width="match_parent"
+						    android:layout_height="match_parent"
+							android:layout_toLeftOf="@+id/nodo1_tempsuelo"
+							android:layout_below="@+id/editText3"
+						    android:src="@drawable/temperatura_suelo"
+						    android:background="@drawable/card_shape_normal2"
+						     />
+
+						<Button
+						    android:id="@+id/nodo1_tempsuelo"
+						    android:layout_width="wrap_content"
+						    android:layout_height="wrap_content"
+						    android:layout_alignParentRight="true"
+						    android:layout_alignTop="@+id/imagen_tempsuelo"
+						    android:drawableLeft="@drawable/ic_boton"
+						    android:drawablePadding="15dp"
+						    android:gravity="left|center_vertical"
+						    android:text="@string/nodo1" />
+
+						<Button
+						    android:id="@+id/nodo2_tempsuelo"
+						    android:layout_width="wrap_content"
+						    android:layout_height="wrap_content"
+						    android:layout_alignParentRight="true"
+						    android:drawableLeft="@drawable/ic_boton"
+						    android:drawablePadding="15dp"
+						    android:gravity="left|center_vertical"
+						    android:layout_alignRight="@+id/nodo1_tempsuelo"
+						    android:layout_below="@+id/nodo1_tempsuelo"
+						    android:text="@string/nodo2" />
+
+						<Button
+						    android:id="@+id/nodo3_tempsuelo"
+						    android:layout_width="wrap_content"
+						    android:layout_height="wrap_content"
+						    android:layout_alignParentRight="true"
+						    android:drawableLeft="@drawable/ic_boton"
+						    android:drawablePadding="15dp"
+						    android:gravity="left|center_vertical"
+						    android:layout_alignLeft="@+id/nodo2_tempsuelo"
+						    android:layout_below="@+id/nodo2_tempsuelo"
+						    android:text="@string/nodo3" />
+
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="210dp"
+                        android:background="@drawable/card_shape_normal"
+                        android:padding="8dp" >
+                        
+
+
+						<ImageView
+						    android:id="@+id/humsuelo"
+						    android:layout_width="match_parent"
+						    android:layout_height="match_parent"
+							android:layout_toLeftOf="@+id/nodo1_humsuelo"
+						    android:src="@drawable/humedad_suelo"
+						    android:background="@drawable/card_shape_normal2"
+						     />
+
+						<Button
+						    android:id="@+id/nodo1_humsuelo"
+						    android:layout_width="wrap_content"
+						    android:layout_height="wrap_content"
+						    android:layout_alignParentRight="true"
+						    android:layout_alignTop="@+id/humsuelo"
+						    android:drawableLeft="@drawable/ic_boton"
+						    android:drawablePadding="15dp"
+						    android:gravity="left|center_vertical"
+						    android:text="@string/nodo1" />
+
+						<Button
+						    android:id="@+id/nodo2_humsuelo"
+						    android:layout_width="wrap_content"
+						    android:layout_height="wrap_content"
+						    android:layout_alignParentRight="true"
+						    android:drawableLeft="@drawable/ic_boton"
+						    android:drawablePadding="15dp"
+						    android:gravity="left|center_vertical"
+						    android:layout_alignRight="@+id/nodo1_humsuelo"
+						    android:layout_below="@+id/nodo1_humsuelo"
+						    android:text="@string/nodo2" />
+
+						<Button
+						    android:id="@+id/nodo3_humsuelo"
+						    android:layout_width="wrap_content"
+						    android:layout_height="wrap_content"
+						    android:layout_alignParentRight="true"
+						    android:drawableLeft="@drawable/ic_boton"
+						    android:drawablePadding="15dp"
+						    android:gravity="left|center_vertical"
+						    android:layout_alignLeft="@+id/nodo2_humsuelo"
+						    android:layout_below="@+id/nodo2_humsuelo"
+						    android:text="@string/nodo3" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </FrameLayout>
+            </ScrollView>
+        </LinearLayout>
+    </TabHost>
+
+</LinearLayout>

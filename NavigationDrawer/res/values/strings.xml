@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Agrosense</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    
+    <string name="drawer_open">Open drawer</string>
+    <string name="drawer_close">Close drawer</string>
+    <string name="fecha">Fecha: Año-Mes-Día</string>
+    <string name="nodo1">Nodo 1</string>
+    <string name="nodo2">Nodo 2</string>
+    <string name="nodo3">Nodo 3</string>
+
+</resources>
