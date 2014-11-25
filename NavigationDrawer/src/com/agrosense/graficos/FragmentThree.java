@@ -40,7 +40,7 @@ import android.widget.TextView;
 	private String [] medidas = {"MeanTemp","MeanHum","MeanPress","MeanSolar","MeanLeaf","MeanBatt","MeanTempS"};
 	private String [] lugar_nodo = new String [5];
 	private String fecha1, fecha1_2, fecha2, fecha3;
-	private TextView text;
+	private TextView text, text2;
 	private Calendar calender = Calendar.getInstance();
 	
 	
@@ -158,7 +158,7 @@ import android.widget.TextView;
 	}
 
 
-	public void onClick(View v){		
+	@SuppressLint("CutPasteId") public void onClick(View v){		
 		Bundle args = null;
 		Fragment fragment = null;
 		cargar_datos aux = null;
@@ -191,9 +191,14 @@ import android.widget.TextView;
 		break;
 
 		case R.id.nodo1_temp:
+		
 		this.text = (TextView)getActivity().findViewById(R.id.fecha);
+		this.text2 = (TextView)getActivity().findViewById(R.id.fecha2);
+		
 		this.fecha1 = text.getText().toString();
-		Log.d("fecha","esta es la fecha "+ fecha1);
+		this.fecha1_2 = text2.getText().toString();
+		
+		Log.d("fecha","esta es la fecha "+ fecha1 + " " + fecha1_2);
 		args = new Bundle();
 		aux = new cargar_datos(this.lugar_nodo[0], this.lugar_nodo[1],fecha1, fecha1_2,medidas[0],funciones[0]);
 		Array_datos = aux.get_datos();

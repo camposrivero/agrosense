@@ -62,6 +62,7 @@ public class FragmentOne extends Fragment {
 		
 		for (int i = 0; i < Array_datos.size(); i++) {
 			
+
 			ejex[i] = Array_datos.get(i).gethora();
 			ejey[i] = Array_datos.get(i).getvariable();
 		
