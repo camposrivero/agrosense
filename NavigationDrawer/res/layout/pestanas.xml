@@ -252,31 +252,73 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:gravity="center" >
+				<RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="155dp"
+                        android:background="@drawable/card_shape_normal"
+                        android:padding="8dp" >
+                        
+                     <TextView
+                         android:id="@+id/fecha3"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_alignBottom="@+id/btn_fecha3"
+                         android:layout_alignParentLeft="true"
+                         android:layout_alignParentTop="true"
+                         android:layout_toLeftOf="@+id/btn_fecha3"
+                         android:background="@drawable/card_shape_normal"
+                         android:text=""
+                         android:gravity="center"
+                         android:textSize="20sp"
+                         android:textColor="@color/blanco" />
+    				
+    				<TextView
+    				    android:id="@+id/fecha4"
+    				    android:layout_width="wrap_content"
+    				    android:layout_height="wrap_content"
+    				    android:layout_alignParentLeft="true"
+    				    android:layout_below="@+id/btn_fecha3"
+    				    android:layout_toLeftOf="@+id/btn_fecha4"
+    				    android:background="@drawable/card_shape_normal"
+    				    android:text=""
+    				    android:gravity="center"
+                        android:textSize="20sp"
+                        android:textColor="@color/blanco" />
+
+    				 <Button
+    				     android:id="@+id/btn_fecha3"
+    				     style="?android:attr/buttonStyleSmall"
+    				     android:layout_width="wrap_content"
+    				     android:layout_height="wrap_content"
+    				     android:layout_above="@+id/btn_fecha4"
+    				     android:layout_alignParentRight="true"
+    				     android:layout_marginBottom="16dp"
+    				     android:text="Desde" />
+
+    				 <Button
+    				     android:id="@+id/btn_fecha4"
+    				     style="?android:attr/buttonStyleSmall"
+    				     android:layout_width="wrap_content"
+    				     android:layout_height="wrap_content"
+    				     android:layout_alignParentBottom="true"
+    				     android:layout_alignParentRight="true"
+    				     android:layout_marginBottom="14dp"
+    				     android:text="Hasta" />
+                        
+                    </RelativeLayout>
                     
                      <RelativeLayout
                         android:layout_width="fill_parent"
                         android:layout_height="210dp"
                         android:background="@drawable/card_shape_normal"
                         android:padding="8dp" >
-                        
 
-                        <EditText
-                            android:id="@+id/editText2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentLeft="true"
-                            android:hint="@string/fecha"
-                            android:inputType="date">
-
-                            <requestFocus />
-                        </EditText>
 
 						<ImageView
 						    android:id="@+id/imagen_radiacion"
 						    android:layout_width="match_parent"
 						    android:layout_height="match_parent"
 							android:layout_toLeftOf="@+id/nodo1_rad"
-							android:layout_below="@+id/editText2"
 						    android:src="@drawable/radiacion"
 						    android:background="@drawable/card_shape_normal2"
 						     />
