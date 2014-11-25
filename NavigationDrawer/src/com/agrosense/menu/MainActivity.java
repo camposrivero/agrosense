@@ -80,7 +80,7 @@ public class MainActivity extends Activity {
 		public void onDrawerClosed(View view) {
 			getActionBar().setTitle(mTitle);
 			invalidateOptionsMenu(); // creates call to
-											// onPrepareOptionsMenu()
+									 // onPrepareOptionsMenu()
 		}
 
 			public void onDrawerOpened(View drawerView) {

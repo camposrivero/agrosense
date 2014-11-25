@@ -38,8 +38,8 @@ import android.widget.Toast;
 	private String [] funciones = {"getClimate","getPlant","getSoil"};
 	private String [] medidas = {"MeanTemp","MeanHum","MeanPress","MeanSolar","MeanLeaf","MeanBatt","MeanTempS"};
 	private String [] lugar_nodo = new String [5];
-	private String fecha1, fecha1_2, fecha2, fecha3;
-	private TextView text, text2;
+	private String fecha1, fecha1_2, fecha2, fecha2_2, fecha3, fecha3_3;
+	private TextView text, text2, text3, text4, text5, text6;
 	private Calendar calender = Calendar.getInstance();
 	
 	
@@ -79,13 +79,24 @@ import android.widget.Toast;
 		
 		TextView texto = (TextView)view.findViewById(R.id.fecha);
 		TextView texto2 = (TextView)view.findViewById(R.id.fecha2);
+		TextView texto3 = (TextView)view.findViewById(R.id.fecha3);
+		TextView texto4 = (TextView)view.findViewById(R.id.fecha4);
+		TextView texto5 = (TextView)view.findViewById(R.id.fecha5);
+		TextView texto6 = (TextView)view.findViewById(R.id.fecha6);
 		
 		this.fecha1 = texto.getText().toString();
 		this.fecha1_2 = texto2.getText().toString();
-
+		this.fecha2 = texto3.getText().toString();
+		this.fecha2_2 = texto4.getText().toString();
+		this.fecha3 = texto5.getText().toString();
+		this.fecha3_3 = texto6.getText().toString();
 		
 		Button date = (Button)view.findViewById(R.id.btn_fecha);
 		Button date2 = (Button)view.findViewById(R.id.btn_fecha2);
+		Button date3 = (Button)view.findViewById(R.id.btn_fecha3);
+		Button date4 = (Button)view.findViewById(R.id.btn_fecha4);
+		Button date5 = (Button)view.findViewById(R.id.btn_fecha5);
+		Button date6 = (Button)view.findViewById(R.id.btn_fecha6);
 		
 		Button boton1 =(Button)view.findViewById(R.id.nodo1_temp);
 		Button boton2 =(Button)view.findViewById(R.id.nodo2_temp); //Temperatura Clima
@@ -117,6 +128,11 @@ import android.widget.Toast;
 		
 		date.setOnClickListener(this);
 		date2.setOnClickListener(this);
+		date3.setOnClickListener(this);
+		date4.setOnClickListener(this);
+		date5.setOnClickListener(this);
+		date6.setOnClickListener(this);
+
 		
 		boton1.setOnClickListener(this);
 		boton2.setOnClickListener(this);
@@ -146,7 +162,7 @@ import android.widget.Toast;
 		boton20.setOnClickListener(this);
 		boton21.setOnClickListener(this);
 		
-		updatelabelall(texto, texto2);
+		updatelabelall(texto, texto2, texto3, texto4, texto5, texto6);
 		
 		this.fecha1 = texto.getText().toString();
 		this.fecha1_2 = texto.getText().toString();
@@ -163,9 +179,17 @@ import android.widget.Toast;
 		
 		this.text = (TextView)getActivity().findViewById(R.id.fecha);
 		this.text2 = (TextView)getActivity().findViewById(R.id.fecha2);
+		this.text3 = (TextView)getActivity().findViewById(R.id.fecha3);
+		this.text4 = (TextView)getActivity().findViewById(R.id.fecha4);
+		this.text5 = (TextView)getActivity().findViewById(R.id.fecha5);
+		this.text6= (TextView)getActivity().findViewById(R.id.fecha6);
 		
 		this.fecha1 = text.getText().toString();
 		this.fecha1_2 = text2.getText().toString();
+		this.fecha2 = text3.getText().toString();
+		this.fecha2_2 = text4.getText().toString();
+		this.fecha3 = text5.getText().toString();
+		this.fecha3_3 = text6.getText().toString();
 		
 		switch(v.getId()){
 		
@@ -179,6 +203,38 @@ import android.widget.Toast;
 		break;
 		case R.id.btn_fecha2:
 			this.text = (TextView)getActivity().findViewById(R.id.fecha2);
+			new Handler().post(new Runnable() {
+				public void run() {
+					setDate();	
+				}
+			});	
+		break;
+		case R.id.btn_fecha3:
+			this.text = (TextView)getActivity().findViewById(R.id.fecha3);
+			new Handler().post(new Runnable() {
+				public void run() {
+					setDate();	
+				}
+			});	
+		break;
+		case R.id.btn_fecha4:
+			this.text = (TextView)getActivity().findViewById(R.id.fecha4);
+			new Handler().post(new Runnable() {
+				public void run() {
+					setDate();	
+				}
+			});	
+		break;
+		case R.id.btn_fecha5:
+			this.text = (TextView)getActivity().findViewById(R.id.fecha5);
+			new Handler().post(new Runnable() {
+				public void run() {
+					setDate();	
+				}
+			});	
+		break;
+		case R.id.btn_fecha6:
+			this.text = (TextView)getActivity().findViewById(R.id.fecha6);
 			new Handler().post(new Runnable() {
 				public void run() {
 					setDate();	
@@ -322,7 +378,7 @@ import android.widget.Toast;
 			break;
 		case R.id.nodo1_rad:
 			args = new Bundle();
-			aux = new cargar_datos(this.lugar_nodo[0], this.lugar_nodo[1],fecha2, fecha1_2,medidas[3],funciones[1]);
+			aux = new cargar_datos(this.lugar_nodo[0], this.lugar_nodo[1],fecha2, fecha2_2,medidas[3],funciones[1]);
 			Array_datos = aux.get_datos();
 			if(Array_datos.isEmpty()){
 				Toast.makeText(getActivity(), "Datos no subidos", Toast.LENGTH_SHORT).show();
@@ -337,7 +393,7 @@ import android.widget.Toast;
 			break;
 		case R.id.nodo2_rad:
 			args = new Bundle();
-			aux = new cargar_datos(this.lugar_nodo[0], this.lugar_nodo[2],fecha2,fecha1_2,medidas[3],funciones[1]);
+			aux = new cargar_datos(this.lugar_nodo[0], this.lugar_nodo[2],fecha2,fecha2_2,medidas[3],funciones[1]);
 			Array_datos = aux.get_datos();
 			if(Array_datos.isEmpty()){
 				Toast.makeText(getActivity(), "Datos no subidos", Toast.LENGTH_SHORT).show();
@@ -352,7 +408,7 @@ import android.widget.Toast;
 			break;
 		case R.id.nodo3_rad:
 			args = new Bundle();
-			aux = new cargar_datos(this.lugar_nodo[0], this.lugar_nodo[3],fecha2,fecha1_2,medidas[3],funciones[1]);
+			aux = new cargar_datos(this.lugar_nodo[0], this.lugar_nodo[3],fecha2,fecha2_2,medidas[3],funciones[1]);
 			Array_datos = aux.get_datos();
 			if(Array_datos.isEmpty()){
 				Toast.makeText(getActivity(), "Datos no subidos", Toast.LENGTH_SHORT).show();
@@ -367,7 +423,7 @@ import android.widget.Toast;
 			break;
 		case R.id.nodo1_hum_plant:
 			args = new Bundle();
-			aux = new cargar_datos(this.lugar_nodo[0], this.lugar_nodo[1],fecha2,fecha1_2,medidas[4],funciones[1]);
+			aux = new cargar_datos(this.lugar_nodo[0], this.lugar_nodo[1],fecha2,fecha2_2,medidas[4],funciones[1]);
 			Array_datos = aux.get_datos();
 			if(Array_datos.isEmpty()){
 				Toast.makeText(getActivity(), "Datos no subidos", Toast.LENGTH_SHORT).show();
@@ -382,7 +438,7 @@ import android.widget.Toast;
 			break;
 		case R.id.nodo2_hum_plant:
 			args = new Bundle();
-			aux = new cargar_datos(this.lugar_nodo[0], this.lugar_nodo[2],fecha2,fecha1_2,medidas[4],funciones[1]);
+			aux = new cargar_datos(this.lugar_nodo[0], this.lugar_nodo[2],fecha2,fecha2_2,medidas[4],funciones[1]);
 			Array_datos = aux.get_datos();
 			if(Array_datos.isEmpty()){
 				Toast.makeText(getActivity(), "Datos no subidos", Toast.LENGTH_SHORT).show();
@@ -397,7 +453,7 @@ import android.widget.Toast;
 			break;
 		case R.id.nodo3_hum_plant:
 			args = new Bundle();
-			aux = new cargar_datos(this.lugar_nodo[0], this.lugar_nodo[3],fecha2,fecha1_2,medidas[4],funciones[1]);
+			aux = new cargar_datos(this.lugar_nodo[0], this.lugar_nodo[3],fecha2,fecha2_2,medidas[4],funciones[1]);
 			Array_datos = aux.get_datos();
 			if(Array_datos.isEmpty()){
 				Toast.makeText(getActivity(), "Datos no subidos", Toast.LENGTH_SHORT).show();
@@ -412,7 +468,7 @@ import android.widget.Toast;
 			break;
 		case R.id.nodo1_bateria:
 			args = new Bundle();
-			aux = new cargar_datos(this.lugar_nodo[0], this.lugar_nodo[1],fecha2,fecha1_2,medidas[5],funciones[1]);
+			aux = new cargar_datos(this.lugar_nodo[0], this.lugar_nodo[1],fecha2,fecha2_2,medidas[5],funciones[1]);
 			Array_datos = aux.get_datos();
 			if(Array_datos.isEmpty()){
 				Toast.makeText(getActivity(), "Datos no subidos", Toast.LENGTH_SHORT).show();
@@ -427,7 +483,7 @@ import android.widget.Toast;
 			break;
 		case R.id.nodo2_bateria:
 			args = new Bundle();
-			aux = new cargar_datos(this.lugar_nodo[0], this.lugar_nodo[2],fecha2,fecha1_2,medidas[5],funciones[1]);
+			aux = new cargar_datos(this.lugar_nodo[0], this.lugar_nodo[2],fecha2,fecha2_2,medidas[5],funciones[1]);
 			Array_datos = aux.get_datos();
 			if(Array_datos.isEmpty()){
 				Toast.makeText(getActivity(), "Datos no subidos", Toast.LENGTH_SHORT).show();
@@ -442,7 +498,7 @@ import android.widget.Toast;
 			break;
 		case R.id.nodo3_bateria:
 			args = new Bundle();
-			aux = new cargar_datos(this.lugar_nodo[0], this.lugar_nodo[3],fecha2,fecha1_2,medidas[5],funciones[1]);
+			aux = new cargar_datos(this.lugar_nodo[0], this.lugar_nodo[3],fecha2,fecha2_2,medidas[5],funciones[1]);
 			Array_datos = aux.get_datos();
 			if(Array_datos.isEmpty()){
 				Toast.makeText(getActivity(), "Datos no subidos", Toast.LENGTH_SHORT).show();
@@ -457,7 +513,7 @@ import android.widget.Toast;
 			break;
 		case R.id.nodo1_tempsuelo:
 			args = new Bundle();
-			aux = new cargar_datos(this.lugar_nodo[0], this.lugar_nodo[1],fecha3,fecha1_2,medidas[6],funciones[2]);
+			aux = new cargar_datos(this.lugar_nodo[0], this.lugar_nodo[1],fecha3,fecha3_3,medidas[6],funciones[2]);
 			Array_datos = aux.get_datos();
 			if(Array_datos.isEmpty()){
 				Toast.makeText(getActivity(), "Datos no subidos", Toast.LENGTH_SHORT).show();
@@ -472,7 +528,7 @@ import android.widget.Toast;
 			break;
 		case R.id.nodo2_tempsuelo:
 			args = new Bundle();
-			aux = new cargar_datos(this.lugar_nodo[0], this.lugar_nodo[2],fecha3,fecha1_2,medidas[6],funciones[2]);
+			aux = new cargar_datos(this.lugar_nodo[0], this.lugar_nodo[2],fecha3,fecha3_3,medidas[6],funciones[2]);
 			Array_datos = aux.get_datos();
 			if(Array_datos.isEmpty()){
 				Toast.makeText(getActivity(), "Datos no subidos", Toast.LENGTH_SHORT).show();
@@ -487,7 +543,7 @@ import android.widget.Toast;
 			break;
 		case R.id.nodo3_tempsuelo:
 			args = new Bundle();
-			aux = new cargar_datos(this.lugar_nodo[0], this.lugar_nodo[3],fecha3,fecha1_2,medidas[6],funciones[2]);
+			aux = new cargar_datos(this.lugar_nodo[0], this.lugar_nodo[3],fecha3,fecha3_3,medidas[6],funciones[2]);
 			Array_datos = aux.get_datos();
 			if(Array_datos.isEmpty()){
 				Toast.makeText(getActivity(), "Datos no subidos", Toast.LENGTH_SHORT).show();
@@ -508,10 +564,14 @@ import android.widget.Toast;
 		texto.setText(date);
 	}
 	
-	public void updatelabelall(TextView texto, TextView texto2){
+	public void updatelabelall(TextView texto, TextView texto2, TextView texto3, TextView texto4, TextView texto5, TextView texto6){
 		String date = new SimpleDateFormat("yyyy-MM-dd").format(calender.getTime());
 		texto.setText(date);
 		texto2.setText(date);
+		texto3.setText(date);
+		texto4.setText(date);
+		texto5.setText(date);
+		texto6.setText(date);
 	}
 	
 
