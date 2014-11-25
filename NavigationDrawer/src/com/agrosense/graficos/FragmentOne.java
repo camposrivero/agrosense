@@ -49,8 +49,6 @@ public class FragmentOne extends Fragment {
 
 		View view = inflater.inflate(R.layout.grafico, container,false);
 		
-		//Ordenar_Lista(Array_datos_copia);
-		
 		String[] titles = new String[] {Lugar};
 		
 		List<double[]> x = new ArrayList<double[]>();
@@ -58,14 +56,19 @@ public class FragmentOne extends Fragment {
 		double [] ejex = new double [Array_datos.size()];
 		double [] ejey = new double [Array_datos.size()];
 		double [] ejey2 = new double[Array_datos.size()];
+		double horas = 24;
+		double veces = 0;
 
 		
 		for (int i = 0; i < Array_datos.size(); i++) {
-			
 
-			ejex[i] = Array_datos.get(i).gethora();
 			ejey[i] = Array_datos.get(i).getvariable();
-		
+			
+			if (i!=0 && i%24 == 0){
+			veces++;
+			}
+			
+			ejex[i] = Array_datos.get(i).gethora() + veces*horas;
 		}
 		
 		x.add(ejex);

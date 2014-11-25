@@ -156,8 +156,6 @@ import android.widget.TextView;
 		
 		
 	}
-
-
 	@SuppressLint("CutPasteId") public void onClick(View v){		
 		Bundle args = null;
 		Fragment fragment = null;
