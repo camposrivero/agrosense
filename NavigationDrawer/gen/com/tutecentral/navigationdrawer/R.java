@@ -36,37 +36,44 @@ public final class R {
          */
         public static final int activity_horizontal_margin=0x7f050000;
         public static final int activity_vertical_margin=0x7f050001;
+        public static final int tamano=0x7f050002;
     }
     public static final class drawable {
-        public static final int alastizas=0x7f020000;
-        public static final int bateria=0x7f020001;
-        public static final int boton=0x7f020002;
-        public static final int boton_pulsado=0x7f020003;
-        public static final int canepa=0x7f020004;
-        public static final int card_shape_normal=0x7f020005;
-        public static final int card_shape_normal2=0x7f020006;
-        public static final int desconectado=0x7f020007;
-        public static final int drawer_shadow=0x7f020008;
-        public static final int humedad=0x7f020009;
-        public static final int humedad_planta=0x7f02000a;
-        public static final int humedad_suelo=0x7f02000b;
-        public static final int ic_action_casanova=0x7f02000c;
-        public static final int ic_action_donoso=0x7f02000d;
-        public static final int ic_action_help=0x7f02000e;
-        public static final int ic_action_lab=0x7f02000f;
-        public static final int ic_action_settings=0x7f020010;
-        public static final int ic_boton=0x7f020011;
-        public static final int ic_drawer=0x7f020012;
-        public static final int ic_launcher=0x7f020013;
-        public static final int niceblue=0x7f020014;
-        public static final int presion=0x7f020015;
-        public static final int radiacion=0x7f020016;
-        public static final int seleccionar=0x7f020017;
-        public static final int temperatura=0x7f020018;
-        public static final int temperatura_suelo=0x7f020019;
+        public static final int agrosense=0x7f020000;
+        public static final int alastizas=0x7f020001;
+        public static final int android=0x7f020002;
+        public static final int androidred=0x7f020003;
+        public static final int androidwifi=0x7f020004;
+        public static final int bateria=0x7f020005;
+        public static final int boton=0x7f020006;
+        public static final int boton_pulsado=0x7f020007;
+        public static final int canepa=0x7f020008;
+        public static final int card_shape_normal=0x7f020009;
+        public static final int card_shape_normal2=0x7f02000a;
+        public static final int desconectado=0x7f02000b;
+        public static final int drawer_shadow=0x7f02000c;
+        public static final int gore=0x7f02000d;
+        public static final int humedad=0x7f02000e;
+        public static final int humedad_planta=0x7f02000f;
+        public static final int humedad_suelo=0x7f020010;
+        public static final int ic_action_casanova=0x7f020011;
+        public static final int ic_action_donoso=0x7f020012;
+        public static final int ic_action_help=0x7f020013;
+        public static final int ic_action_lab=0x7f020014;
+        public static final int ic_action_settings=0x7f020015;
+        public static final int ic_boton=0x7f020016;
+        public static final int ic_drawer=0x7f020017;
+        public static final int ic_launcher=0x7f020018;
+        public static final int niceblue=0x7f020019;
+        public static final int presion=0x7f02001a;
+        public static final int radiacion=0x7f02001b;
+        public static final int seleccionar=0x7f02001c;
+        public static final int temperatura=0x7f02001d;
+        public static final int temperatura_suelo=0x7f02001e;
+        public static final int ucm_logo=0x7f02001f;
     }
     public static final class id {
-        public static final int action_settings=0x7f090036;
+        public static final int action_settings=0x7f09003d;
         public static final int btn_fecha=0x7f090009;
         public static final int btn_fecha2=0x7f09000b;
         public static final int btn_fecha3=0x7f09001a;
@@ -85,15 +92,22 @@ public final class R {
         public static final int fecha5=0x7f09002a;
         public static final int fecha6=0x7f09002c;
         public static final int humsuelo=0x7f090032;
+        public static final int imagen_android=0x7f090039;
         public static final int imagen_bateria=0x7f090025;
+        public static final int imagen_catolica=0x7f090038;
+        public static final int imagen_gore=0x7f090037;
         public static final int imagen_humedad=0x7f090010;
         public static final int imagen_humedad_planta=0x7f090021;
         public static final int imagen_presion=0x7f090014;
         public static final int imagen_radiacion=0x7f09001d;
         public static final int imagen_temperatura=0x7f09000c;
         public static final int imagen_tempsuelo=0x7f09002e;
+        public static final int imagenred=0x7f09003c;
         public static final int itemLayout=0x7f090003;
         public static final int left_drawer=0x7f090002;
+        public static final int linear=0x7f090036;
+        public static final int linear2=0x7f09003a;
+        public static final int linear3=0x7f09003b;
         public static final int nodo1_bateria=0x7f090026;
         public static final int nodo1_hum=0x7f090011;
         public static final int nodo1_hum_plant=0x7f090022;
@@ -127,6 +141,7 @@ public final class R {
         public static final int custom_drawer_item=0x7f030001;
         public static final int grafico=0x7f030002;
         public static final int pestanas=0x7f030003;
+        public static final int presentacion=0x7f030004;
     }
     public static final class menu {
         public static final int main=0x7f080000;
@@ -134,6 +149,7 @@ public final class R {
     public static final class string {
         public static final int action_settings=0x7f060001;
         public static final int app_name=0x7f060000;
+        public static final int descripcion=0x7f060009;
         public static final int drawer_close=0x7f060004;
         public static final int drawer_open=0x7f060003;
         public static final int fecha=0x7f060005;

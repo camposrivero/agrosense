@@ -113,7 +113,7 @@ public class MainActivity extends Activity {
 		Bundle args = new Bundle();
 		switch (possition) {
 		case 0:
-			fragment = new FragmentThree(casanova);
+			fragment = new menufragment();
 			break;
 		case 1:
 			fragment = new FragmentThree(lastizas);

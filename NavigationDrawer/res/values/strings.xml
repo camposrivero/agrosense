@@ -11,5 +11,7 @@
     <string name="nodo1">Nodo 1</string>
     <string name="nodo2">Nodo 2</string>
     <string name="nodo3">Nodo 3</string>
+    <string name="descripcion">                      El proyecto Agrosense utiliza tecnologia WSN para crear una arquitectura de monitoreo
+         en tiempo real para la agricultura de precisión. \n   Esta aplicación utiliza conexión 3G o Wifi</string>
 
 </resources>
